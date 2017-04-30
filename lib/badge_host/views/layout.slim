@@ -1,0 +1,55 @@
+doctype html
+html lang='en'
+  head
+    title BadgeHost
+    css:
+      html {
+        background-color: #eee;
+        color: #333;
+        font-family: sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 10px 30px;
+      }
+
+      label {
+        display: block;
+      }
+
+      hr {
+        background-color: #ccc;
+        border: none;
+        color: #ccc;
+        height: 1px;
+      }
+
+  body
+    h1
+      a href="#{request.base_url}"
+        | Badge Host: Exfiltrate your application's badges
+
+    hr
+
+    == yield
+
+    hr
+
+    p
+      ' Storage by <a href="http://redis4you.com">Redis4You</a>.
+      ' Hosted on <a href="https://www.heroku.com/home">Heroku</a>.
+      ' Source at <a href="https://github.com/breckenedge/badge_host/">Github</a>.
+      ' Badges by <a href="https://shields.io">Shields.io</a>.
+
+    p
+      a href="#{request.base_url}/badges/946cec5022c837515f9c5d846397cc6a0004736f7b6029e4d37f0451a48e0a40"
+        img src="#{request.base_url}/badges/946cec5022c837515f9c5d846397cc6a0004736f7b6029e4d37f0451a48e0a40.svg"

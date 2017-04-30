@@ -1,0 +1,57 @@
+p
+  '
+    Update this badge by <tt>POST</tt>ing the same <tt>owner</tt>,
+    <tt>project</tt>, <tt>subject</tt> and <tt>password</tt> parameters with new
+    <tt>status</tt> and <tt>color</tt> parameters to
+    <tt>#{request.base_url}/badges</tt>, for example:
+
+p
+  '
+    <tt>curl -d 'owner=foo&project=bar&subject=testing&color=green&status=100'
+    #{request.base_url}/badges</tt>
+
+hr
+
+dl
+  dt
+    | Key:
+  dd
+    tt
+      = params[:badge_key]
+
+  dt
+    | Subject:
+  dd
+    tt
+      = @badge['subject']
+
+  dt
+    | Status:
+  dd
+    tt
+      = @badge['status']
+
+  dt
+    | Color:
+  dd
+    tt
+      = @badge['color']
+
+  dt
+    | Image:
+  dd
+    a href="/badges/#{params[:badge_key]}.svg"
+      img src="/badges/#{params[:badge_key]}.svg"
+
+  dt
+    | Markdown:
+  dd
+    tt onclick="selectText(this)"
+      | [![#{@badge['subject']} #{@badge['status']}](#{request.base_url}/badges/#{params[:badge_key]}.svg)](#{request.base_url}/badges/#{params[:badge_key]})
+
+javascript:
+  var selectText = function (el) {
+    var range = document.createRange(el);
+    range.selectNode(el);
+    window.getSelection().addRange(range)
+  }
