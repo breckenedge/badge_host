@@ -27,7 +27,7 @@ module BadgeHost
       badge_doc = $redis.get "badge_host/#{badge_key}"
       @badge = badge_doc ? JSON.parse(badge_doc) : DEFAULT_BADGE
       if request.path.end_with? '.svg'
-        headers 'Content-Type' => 'image/svg+xml'
+        headers 'Cache-Control' => 'no-cache', 'Content-Type' => 'image/svg+xml'
         url = 'https://img.shields.io/badge/' \
           "#{@badge['subject']}-#{@badge['status']}-#{@badge['color']}.svg"
         stream { |out| out << cache_or_fetch(url) }
