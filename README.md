@@ -11,8 +11,8 @@ About
 
 Publicly host and manage your (private) project badges. Github's cacher can't
 get to your firewalled CI server, so it'll render a broken image if you try to
-add a reference to it. Use Badge Host and cURL to exfiltrate your application's
-badges.
+add a reference to it. Use [Badge Host](https://badge-host.herokuapp.com) and
+cURL to exfiltrate your application's badges.
 
 Usage
 -----
