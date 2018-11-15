@@ -14,3 +14,5 @@ gem 'rubocop', group: :development
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'slim'
+
+gem 'simplecov', require: false, group: :test

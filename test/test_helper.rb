@@ -2,6 +2,11 @@
 
 require 'bundler'
 
+if ENV['COVERAGE']
+  require 'simplecov'
+  SimpleCov.start
+end
+
 Bundler.setup
 
 require 'irb'
