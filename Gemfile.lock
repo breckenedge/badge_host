@@ -12,7 +12,7 @@ GEM
       ast (~> 2.2)
     powerpack (0.1.1)
     puma (3.7.0)
-    rack (1.6.9)
+    rack (1.6.11)
     rack-protection (1.5.5)
       rack
     rack-test (0.6.3)
@@ -71,4 +71,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.1
+   1.16.4
