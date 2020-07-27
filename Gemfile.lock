@@ -5,7 +5,7 @@ GEM
     backports (3.8.0)
     curb (0.9.3)
     docile (1.1.5)
-    json (2.0.2)
+    json (2.3.0)
     minitest (5.10.1)
     multi_json (1.12.1)
     parser (2.4.0.0)
